@@ -13,12 +13,14 @@ export default function App() {
 
     function handlePrevious() {
         if (step > 1) {
-            setStep(step - 1);
+            setStep((s) => s - 1);
         }
     }
     function handleNext() {
         if (step < 3) {
-            setStep(step + 1);
+            // setStep(step + 1);
+            setStep((s) => s + 1);
+            setStep((s) => s + 1);
             // setTest({ name: "Fred" });
         }
     }
@@ -28,7 +30,7 @@ export default function App() {
             <button
                 className="close"
                 onClick={() => {
-                    setIsOpen(!isOpen);
+                    setIsOpen((is) => !is);
                 }}
             >
                 &times;
