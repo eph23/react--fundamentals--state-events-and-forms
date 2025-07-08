@@ -7,12 +7,21 @@ const messages = [
 ];
 
 export default function App() {
+    return (
+        <div>
+            <Steps />
+            <Steps />
+        </div>
+    );
+}
+function Steps() {
     const [step, setStep] = useState(1);
     const [isOpen, setIsOpen] = useState(true);
     // const [test, setTest] = useState({ name: "Eph" });
 
     function handlePrevious() {
         if (step > 1) {
+            // setStep(step - 1);
             setStep((s) => s - 1);
         }
     }
@@ -20,13 +29,12 @@ export default function App() {
         if (step < 3) {
             // setStep(step + 1);
             setStep((s) => s + 1);
-            setStep((s) => s + 1);
             // setTest({ name: "Fred" });
         }
     }
 
     return (
-        <>
+        <div>
             <button
                 className="close"
                 onClick={() => {
@@ -70,6 +78,6 @@ export default function App() {
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }
